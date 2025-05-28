@@ -4,6 +4,25 @@
              xmlns:local="clr-namespace:esoftApp"
              StartupUri="Windows/MainWindow.xaml">
     <Application.Resources>
-         
+        
+        <Style TargetType="Button" x:Key="primaryButtonCommon">
+            <Setter Property="Background" Value="#04A0FF"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Height" Value="36"/>
+            
+            <Style.Resources>
+            
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            
+            </Style.Resources>
+        </Style>
+        
+        <Style TargetType="Button" BasedOn="{StaticResource primaryButtonCommon}">
+            <Setter Property="Height" Value="48"/>
+        </Style>
+        
     </Application.Resources>
 </Application>

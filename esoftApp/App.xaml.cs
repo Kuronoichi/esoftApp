@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using System.Data;
 using System.Windows;
+using Database.Context;
 
 namespace esoftApp;
 
@@ -8,5 +9,5 @@ namespace esoftApp;
 /// Interaction logic for App.xaml
 /// </summary>
 public partial class App : Application
-{
+{   
 }
