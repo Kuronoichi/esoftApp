@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:esoftApp"
         mc:Ignorable="d"
-        Title="Главное меню" Height="600" Width="800" ResizeMode="NoResize">
+        Title="Главное меню" Height="600" Width="800" ResizeMode="NoResize"
+        Icon="../Assets/images/icon.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -30,5 +31,7 @@
         <Button Style="{StaticResource primaryButtonCommon}"
                 Grid.Column="1" Grid.Row="3" Content="Клиенты"
                 Margin="15"/>
+        
+        <TextBox Grid.Column="1" Grid.Row="4" />
     </Grid>
 </Window>
