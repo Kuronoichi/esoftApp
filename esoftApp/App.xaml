@@ -5,22 +5,192 @@
              StartupUri="Windows/MainWindow.xaml">
     <Application.Resources>
         
+        <FontFamily x:Key="RobotoFont">./fonts/#Roboto</FontFamily>
+        
+        <SolidColorBrush x:Key="blue_0" Color="#04A0FF"/>
+        <SolidColorBrush x:Key="blue_1" Color="#0091EA"/>
+        <SolidColorBrush x:Key="blue_2" Color="#0081D1"/>
+        <SolidColorBrush x:Key="green_0" Color="#00D9BB"/>
+        <SolidColorBrush x:Key="green_1" Color="#00BFA5"/>
+        <SolidColorBrush x:Key="green_2" Color="#00A68F"/>
+        <SolidColorBrush x:Key="red_0" Color="#FF4A6D"/>
+        <SolidColorBrush x:Key="red_1" Color="#FF1744"/>
+        <SolidColorBrush x:Key="red_2" Color="#E3002C"/>
+        <SolidColorBrush x:Key="yellow_0" Color="#FFF6A5"/>
+        <SolidColorBrush x:Key="yellow_1" Color="#FFEE58"/>
+        <SolidColorBrush x:Key="yellow_2" Color="#FFE60C"/>
+        <SolidColorBrush x:Key="orange_0" Color="#FF9C1A"/>
+        <SolidColorBrush x:Key="orange_1" Color="#FF9100"/>
+        <SolidColorBrush x:Key="orange_2" Color="#E68300"/>
+        <SolidColorBrush x:Key="gray_0" Color="#F7F9F9"/>
+        <SolidColorBrush x:Key="gray_1" Color="#ECEFF1"/>
+        <SolidColorBrush x:Key="gray_2" Color="#CFD8DC"/>
+        <SolidColorBrush x:Key="gray_3" Color="#B0BEC5"/>
+        <SolidColorBrush x:Key="gray_4" Color="#78909C"/>
+        <SolidColorBrush x:Key="gray_5" Color="#546E7A"/>
+        <SolidColorBrush x:Key="gray_6" Color="#37474F"/>
+        <SolidColorBrush x:Key="gray_7" Color="#263238"/>
+        
         <Style TargetType="Button" x:Key="primaryButtonCommon">
-            <Setter Property="Background" Value="#04A0FF"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Padding" Value="10"/>
+            
+            <Setter Property="Background" Value="{StaticResource blue_1}"/>
+            <Setter Property="Foreground" Value="{StaticResource gray_0}"/>
             <Setter Property="Height" Value="36"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontFamily" Value="{StaticResource RobotoFont}"/>
+            <Setter Property="FontSize" Value="16"/>
             
-            <Style.Resources>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border 
+                            Background="{TemplateBinding Background}" 
+                            CornerRadius="3"
+                            Padding="{TemplateBinding Padding}">
+                            <ContentPresenter 
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
             
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="3"/>
-                </Style>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{StaticResource blue_0}"/>
+                    <Setter Property="Foreground" Value="{StaticResource gray_3}"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource blue_2}"/>
+                </Trigger>
+                
+            </Style.Triggers>
             
-            </Style.Resources>
         </Style>
         
-        <Style TargetType="Button" BasedOn="{StaticResource primaryButtonCommon}">
+        <Style TargetType="Button" BasedOn="{StaticResource primaryButtonCommon}" x:Key="primaryButtonBig">
+            <Setter Property="Height" Value="48"/>
+        </Style>
+        
+        <Style TargetType="Button" BasedOn="{StaticResource primaryButtonCommon}" x:Key="primaryButtonSmall">
+            <Setter Property="Height" Value="48"/>
+        </Style>
+        
+        <Style TargetType="Button" x:Key="statusButtonSuccess">
+            
+            <Setter Property="Background" Value="{StaticResource green_1}"/>
+            <Setter Property="Foreground" Value="{StaticResource gray_0}"/>
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontFamily" Value="{StaticResource RobotoFont}"/>
+            <Setter Property="FontSize" Value="16"/>
+            
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border 
+                            Background="{TemplateBinding Background}" 
+                            CornerRadius="3"
+                            Padding="{TemplateBinding Padding}">
+                            <ContentPresenter 
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            
+        </Style>
+        
+        <Style TargetType="Button" x:Key="statusButtonWarning">
+            
+            <Setter Property="Background" Value="{StaticResource orange_1}"/>
+            <Setter Property="Foreground" Value="{StaticResource gray_0}"/>
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontFamily" Value="{StaticResource RobotoFont}"/>
+            <Setter Property="FontSize" Value="16"/>
+            
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border 
+                            Background="{TemplateBinding Background}" 
+                            CornerRadius="3"
+                            Padding="{TemplateBinding Padding}">
+                            <ContentPresenter 
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            
+        </Style>
+        
+        <Style TargetType="Button" x:Key="statusButtonDanger">
+            
+            <Setter Property="Background" Value="{StaticResource red_1}"/>
+            <Setter Property="Foreground" Value="{StaticResource gray_0}"/>
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontFamily" Value="{StaticResource RobotoFont}"/>
+            <Setter Property="FontSize" Value="16"/>
+            
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border 
+                            Background="{TemplateBinding Background}" 
+                            CornerRadius="3"
+                            Padding="{TemplateBinding Padding}">
+                            <ContentPresenter 
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            
+        </Style>
+        
+        <Style TargetType="Button" x:Key="normalButtonCommon">
+            
+            <Setter Property="Background" Value="{StaticResource gray_1}"/>
+            <Setter Property="Foreground" Value="{StaticResource gray_6}"/>
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontFamily" Value="{StaticResource RobotoFont}"/>
+            <Setter Property="FontSize" Value="16"/>
+            
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border 
+                            Background="{TemplateBinding Background}" 
+                            CornerRadius="3"
+                            Padding="{TemplateBinding Padding}">
+                            <ContentPresenter 
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{StaticResource gray_2}"/>
+                </Trigger>
+            </Style.Triggers>
+            
+        </Style>
+        
+        <Style TargetType="Button" BasedOn="{StaticResource normalButtonCommon}" x:Key="normalButtonBig">
+            <Setter Property="Height" Value="48"/>
+        </Style>
+        
+        <Style TargetType="Button" BasedOn="{StaticResource normalButtonCommon}" x:Key="normalButtonSmall">
             <Setter Property="Height" Value="48"/>
         </Style>
         

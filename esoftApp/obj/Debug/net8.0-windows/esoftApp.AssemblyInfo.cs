@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("esoftApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb28d9c63081e146da3f03219d7cb4ecc6c0fb20")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1da3b800252040d1016400a2215f32903cc6bd37")]
 [assembly: System.Reflection.AssemblyProductAttribute("esoftApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("esoftApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

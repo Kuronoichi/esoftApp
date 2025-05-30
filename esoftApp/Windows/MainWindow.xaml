@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:esoftApp"
         mc:Ignorable="d"
-        Title="Главное меню" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Главное меню" Height="600" Width="800" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -22,7 +22,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         
-        <Viewbox Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Stretch="Uniform" Margin="15">
+        <Viewbox Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Stretch="Uniform" >
             <Image
                 Source="../Assets/images/logo.png"/>
         </Viewbox>
