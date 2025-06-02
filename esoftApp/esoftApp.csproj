@@ -9,10 +9,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="UserComponent\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Page Update="Windows\MainWindow.xaml">
         <Generator>MSBuild:Compile</Generator>
         <XamlRuntime>Wpf</XamlRuntime>
@@ -45,6 +41,10 @@
       <Resource Include="Assets\images\logo.png" />
       <None Remove="Assets\images\icon.ico" />
       <Resource Include="Assets\images\icon.ico" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="UserComponent\" />
     </ItemGroup>
 
 </Project>

@@ -17,4 +17,25 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
     }
+
+    private void ButtonClients_OnClick(object sender, RoutedEventArgs e)
+    {
+        new ClientsWindow().Show();
+        Close();
+    }
+
+    private void ButtonAgents_OnClick(object sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void ButtonEstates_OnClick(object sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void ButtonClose_OnClick(object sender, RoutedEventArgs e)
+    {
+        Close();
+    }
 }

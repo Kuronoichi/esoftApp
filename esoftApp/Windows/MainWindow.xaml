@@ -15,6 +15,8 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         
         <Grid.ColumnDefinitions>
@@ -28,10 +30,25 @@
                 Source="../Assets/images/logo.png"/>
         </Viewbox>
         
-        <Button Style="{StaticResource primaryButtonCommon}"
+        <Button x:Name="buttonClients"
+                Style="{StaticResource primaryButtonCommon}"
                 Grid.Column="1" Grid.Row="3" Content="Клиенты"
-                Margin="15"/>
-        
-        <TextBox Grid.Column="1" Grid.Row="4" />
+                Margin="15"
+                Click="ButtonClients_OnClick"/>
+        <Button x:Name="buttonAgents"
+                Style="{StaticResource primaryButtonCommon}"
+                Grid.Column="1" Grid.Row="4" Content="Риелторы"
+                Margin="15"
+                Click="ButtonAgents_OnClick"/>
+        <Button x:Name="buttonEstates"
+                Style="{StaticResource primaryButtonCommon}"
+                Grid.Column="1" Grid.Row="5" Content="Недвижимость"
+                Margin="15"
+                Click="ButtonEstates_OnClick"/>
+        <Button x:Name="buttonClose"
+                Style="{StaticResource primaryButtonCommon}"
+                Grid.Column="1" Grid.Row="5" Content="Выйти"
+                Margin="15"
+                Click="ButtonClose_OnClick"/>
     </Grid>
 </Window>
