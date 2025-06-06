@@ -5,7 +5,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:esoftApp.Windows"
         mc:Ignorable="d"
-        Title="ClientWindow" Height="450" Width="800" ResizeMode="NoResize" Icon="../Assets/images/icon.ico">
+        Title="Меню клиентов" 
+        Height="450" 
+        Width="800"
+        ResizeMode="NoResize"
+        Icon="../Assets/images/icon.ico"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -15,16 +20,15 @@
 
         <TextBlock Grid.Row="0" 
            Text="Управление клиентами" 
-           Margin="10,10,10,5"
+           Margin="15"
            FontSize="18"
-           FontWeight="Bold"
            Foreground="{StaticResource gray_7}"
            FontFamily="{StaticResource RobotoFont}"/>
 
         <DataGrid  x:Name="ClientsDataGrid" 
                   Grid.Row="1"
                   AutoGenerateColumns="False"
-                  Margin="10,0,10,10"
+                  Margin="15"
                   ItemsSource="{Binding Clients}"
                   SelectionMode="Single"
                    Style="{StaticResource ModernDataGridStyle}">
@@ -35,28 +39,16 @@
                 <DataGridTextColumn Header="Отчество" Binding="{Binding LastName}" Width="*"/>
                 <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="*"/>
                 <DataGridTextColumn Header="Почта" Binding="{Binding Email}" Width="*"/>
-
-                <DataGridTemplateColumn Width="Auto">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Content="Обновить" 
-                                    Click="UpdateClient_Click"
-                                    Margin="2"
-                                    Padding="5,2"
-                                    Tag="{Binding Id}"
-                                    Style="{StaticResource primaryButtonSmall}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
-            <Button Content="Добавить" Click="AddClient_Click" Width="100" Margin="5" Style="{StaticResource primaryButtonCommon}"/>
-            <Button Content="Удалить" Click="DeleteClient_Click" Width="100" Margin="5" Style="{StaticResource primaryButtonCommon}"/>
+            <Button Content="Добавить" Click="AddClient_Click" Width="100" Margin="15" Style="{StaticResource primaryButtonCommon}"/>
+            <Button Content="Удалить" Click="DeleteClient_Click" Width="100" Margin="15" Style="{StaticResource primaryButtonCommon}"/>
+            <Button Content="Изменить" Click="UpdateClient_Click" Margin="15" Style="{StaticResource primaryButtonCommon}"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="10">
-            <Button Content="Назад" Click="Button_Click" Width="70" Margin="5" Style="{StaticResource primaryButtonCommon}"/>
+            <Button Content="Назад" Click=" CloseButton_Click" Width="70" Margin="5" Style="{StaticResource primaryButtonCommon}"/>
         </StackPanel>
     </Grid>
 </Window>

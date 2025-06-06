@@ -6,10 +6,16 @@ namespace esoftApp.Windows
 {
     public partial class ClientWindow : Window
     {
+        private MainService _service;
         public ClientWindow()
         {
             InitializeComponent();
-            MainService _service = new MainService();
+            _service = new MainService();
+            UpdateData();
+        }
+
+        private void UpdateData()
+        {
             ClientsDataGrid.ItemsSource = _service.GetAllClients();
         }
 
@@ -23,17 +29,10 @@ namespace esoftApp.Windows
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
-
-            if (mainWindow == null)
-            {
-                mainWindow = new MainWindow();
-            }
-
-            mainWindow.Show();
-            this.Close();
+            new MainWindow().Show();
+            Close();
         }
 
         private void DeleteClient_Click(object sender, RoutedEventArgs e)

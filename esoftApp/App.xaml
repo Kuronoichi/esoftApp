@@ -53,7 +53,7 @@
             <Setter Property="IsReadOnly" Value="True"/>
             <Setter Property="CanUserSortColumns" Value="True"/>
             <Setter Property="FontFamily" Value="{StaticResource RobotoFont}"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="HorizontalGridLinesBrush" Value="{StaticResource gray_1}"/>
             <Setter Property="VerticalGridLinesBrush" Value="{StaticResource gray_1}"/>
             <Setter Property="RowHeaderWidth" Value="0"/>
@@ -65,12 +65,11 @@
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="{StaticResource gray_1}"/>
                         <Setter Property="Foreground" Value="{StaticResource gray_7}"/>
-                        <Setter Property="FontWeight" Value="Bold"/>
                         <Setter Property="Padding" Value="10,5"/>
                         <Setter Property="HorizontalContentAlignment" Value="Left"/>
                         <Setter Property="VerticalContentAlignment" Value="Center"/>
                         <Setter Property="BorderBrush" Value="{StaticResource gray_2}"/>
-                        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                        <Setter Property="BorderThickness" Value="1"/>
                     </Style>
                 </Setter.Value>
             </Setter>
@@ -80,8 +79,8 @@
                     <Style TargetType="{x:Type DataGridRow}">
                         <Setter Property="Background" Value="Transparent"/>
                         <Setter Property="BorderBrush" Value="{StaticResource gray_1}"/>
-                        <Setter Property="BorderThickness" Value="0,0,0,1"/>
-                        <Setter Property="VerticalContentAlignment" Value="Center"/> <!-- Добавлено -->
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
                         <Style.Triggers>
                             <Trigger Property="IsSelected" Value="True">
                                 <Setter Property="Background" Value="{StaticResource blue_0}"/>
@@ -101,7 +100,7 @@
                         <Setter Property="Padding" Value="10,5"/>
                         <Setter Property="BorderThickness" Value="0"/>
                         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-                        <Setter Property="VerticalContentAlignment" Value="Center"/> <!-- Добавлено -->
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
                         <Style.Triggers>
                             <Trigger Property="IsSelected" Value="True">
                                 <Setter Property="Foreground" Value="{StaticResource gray_7}"/>
