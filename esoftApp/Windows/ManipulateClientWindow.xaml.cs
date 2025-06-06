@@ -2,9 +2,9 @@ using System.Windows;
 
 namespace esoftApp.Windows;
 
-public partial class ClientsWindow : Window
+public partial class ManipulateClientWindow : Window
 {
-    public ClientsWindow()
+    public ManipulateClientWindow()
     {
         InitializeComponent();
     }

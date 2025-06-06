@@ -30,7 +30,90 @@
         <SolidColorBrush x:Key="gray_5" Color="#546E7A"/>
         <SolidColorBrush x:Key="gray_6" Color="#37474F"/>
         <SolidColorBrush x:Key="gray_7" Color="#263238"/>
+
+        <Style x:Key="ModernDataGridStyle" TargetType="{x:Type DataGrid}">
+            <Setter Property="Background" Value="{StaticResource gray_0}"/>
+            <Setter Property="Foreground" Value="{StaticResource gray_7}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource gray_2}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="RowDetailsVisibilityMode" Value="Collapsed"/>
+            <Setter Property="GridLinesVisibility" Value="None"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="SelectionUnit" Value="FullRow"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="CanUserDeleteRows" Value="False"/>
+            <Setter Property="CanUserReorderColumns" Value="True"/>
+            <Setter Property="CanUserResizeColumns" Value="True"/>
+            <Setter Property="CanUserResizeRows" Value="False"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="CanUserSortColumns" Value="True"/>
+            <Setter Property="FontFamily" Value="{StaticResource RobotoFont}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="{StaticResource gray_1}"/>
+            <Setter Property="VerticalGridLinesBrush" Value="{StaticResource gray_1}"/>
+            <Setter Property="RowHeaderWidth" Value="0"/>
+            <Setter Property="ColumnHeaderHeight" Value="36"/>
+
+           
+            <Setter Property="ColumnHeaderStyle">
+                <Setter.Value>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="{StaticResource gray_1}"/>
+                        <Setter Property="Foreground" Value="{StaticResource gray_7}"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="BorderBrush" Value="{StaticResource gray_2}"/>
+                        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="RowStyle">
+                <Setter.Value>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderBrush" Value="{StaticResource gray_1}"/>
+                        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/> <!-- Добавлено -->
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="{StaticResource blue_0}"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource gray_1}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="CellStyle">
+                <Setter.Value>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/> <!-- Добавлено -->
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Foreground" Value="{StaticResource gray_7}"/>
+                                <Setter Property="Background" Value="{StaticResource gray_3}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
         
+
         <Style TargetType="Button" x:Key="primaryButtonCommon">
             
             <Setter Property="Background" Value="{StaticResource blue_1}"/>
@@ -73,7 +156,7 @@
         </Style>
         
         <Style TargetType="Button" BasedOn="{StaticResource primaryButtonCommon}" x:Key="primaryButtonSmall">
-            <Setter Property="Height" Value="48"/>
+            <Setter Property="Height" Value="24"/>
         </Style>
         
         <Style TargetType="Button" x:Key="statusButtonSuccess">

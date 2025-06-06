@@ -20,7 +20,7 @@ public partial class MainWindow : Window
 
     private void ButtonClients_OnClick(object sender, RoutedEventArgs e)
     {
-        new ClientsWindow().Show();
+        new ClientWindow().Show();
         Close();
     }
 

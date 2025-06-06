@@ -7,7 +7,12 @@ namespace esoftApp.Services;
 
 public class ValidationService
 {
-    private readonly MainService _mainService = new MainService();
+    private readonly esoftContext _context;
+
+    public ValidationService(esoftContext context)
+    {
+        _context = context;
+    }
     public ValidationResult ValidateClient(Client client)
     {
         if (string.IsNullOrWhiteSpace(client.Phone) && string.IsNullOrWhiteSpace(client.Email))
@@ -32,8 +37,8 @@ public class ValidationService
     {
         if ((client.Offers != null && client.Offers.Any()) || 
             (client.Demands != null && client.Demands.Any()) ||
-            !(_mainService.GetAllOffers().Any(c => c.ClientId == client.Id)) ||
-            !(_mainService.GetAllDemands().Any(c => c.ClientId == client.Id)))
+            (_context.Offers.Any(o => o.ClientId == client.Id)) ||
+            (_context.Demands.Any(d => d.ClientId == client.Id)))
         {
             return new ValidationResult("Нельзя удалить клиента, связанного с предложением или потребностью");
         }
@@ -62,8 +67,8 @@ public class ValidationService
     {
         if ((agent.Offers != null && agent.Offers.Any()) || 
             (agent.Demands != null && agent.Demands.Any()) ||
-            !(_mainService.GetAllOffers().Any(c => c.AgentId == agent.Id)) ||
-            !(_mainService.GetAllDemands().Any(c => c.AgentId == agent.Id)))
+            (_context.Offers.Any(o => o.AgentId == agent.Id)) ||
+            (_context.Demands.Any(d => d.AgentId == agent.Id)))
         {
             return new ValidationResult("Нельзя удалить клиента, связанного с предложением или потребностью");
         }
@@ -139,7 +144,7 @@ public class ValidationService
     public ValidationResult CanDeleteRealEstate(RealEstate realEstate)
     {
         if ((realEstate.Offers != null && realEstate.Offers.Any()) ||
-            !(_mainService.GetAllOffers().Any(o => o.RealEstateId == realEstate.Id)))
+            (_context.Offers.Any(o => o.RealEstateId == realEstate.Id)))
         {
             return new ValidationResult("Нельзя удалить объект недвижимости, связанный с предложением");
         }

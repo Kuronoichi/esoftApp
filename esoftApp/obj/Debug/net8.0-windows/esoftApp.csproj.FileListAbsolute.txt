@@ -153,5 +153,7 @@ C:\Users\user\Desktop\Labs\esoftApp\esoftApp\bin\Debug\net8.0-windows\Microsoft.
 C:\Users\user\Desktop\Labs\esoftApp\esoftApp\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\user\Desktop\Labs\esoftApp\esoftApp\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\user\Desktop\Labs\esoftApp\esoftApp\obj\Debug\net8.0-windows\App.baml
-C:\Users\user\Desktop\Labs\esoftApp\esoftApp\obj\Debug\net8.0-windows\Windows\ClientsWindow.g.cs
-C:\Users\user\Desktop\Labs\esoftApp\esoftApp\obj\Debug\net8.0-windows\Windows\ClientsWindow.baml
+C:\Users\user\Desktop\Labs\esoftApp\esoftApp\obj\Debug\net8.0-windows\Windows\ClientWindow.g.cs
+C:\Users\user\Desktop\Labs\esoftApp\esoftApp\obj\Debug\net8.0-windows\Windows\ManipulateClientWindow.g.cs
+C:\Users\user\Desktop\Labs\esoftApp\esoftApp\obj\Debug\net8.0-windows\Windows\ClientWindow.baml
+C:\Users\user\Desktop\Labs\esoftApp\esoftApp\obj\Debug\net8.0-windows\Windows\ManipulateClientWindow.baml

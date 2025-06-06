@@ -13,7 +13,7 @@ public class MainService
     public MainService()
     {
         _context = new esoftContextFactory().CreateDbContext(null);
-        _validationService = new ValidationService();
+        _validationService = new ValidationService(_context);
     }
 
     public string AddClient(string? FirstName, string? MiddleName, string? LastName, string? Email, string? Phone)
@@ -272,6 +272,11 @@ public class MainService
     public Client? GetClientById(int clientId)
     {
         return _context.Clients.Find(clientId);
+    }
+
+    public Client[] GetAllClients()
+    {
+        return _context.Clients.ToArray();
     }
 
     public Offer[] GetAllOffers()
